@@ -4,6 +4,7 @@ import torch.nn.functional as F
 def train(model, device, train_loader, optimizer, epoch, log_interval=10):
     
     model.train()
+    epoch_loss = 0
     print(f'Train Epoch: {epoch}')
 
     # loop through batches
@@ -16,6 +17,8 @@ def train(model, device, train_loader, optimizer, epoch, log_interval=10):
         loss.backward()
         optimizer.step()
 
+        epoch_loss += loss.item()
+
         # output progress after each batch
         if batch_idx % log_interval == 0:
             print(f'[{batch_idx * len(data):>5}/{len(train_loader.dataset)}'
@@ -24,3 +27,6 @@ def train(model, device, train_loader, optimizer, epoch, log_interval=10):
 
             torch.save(model.state_dict(), 'results/model.pth')
             torch.save(optimizer.state_dict(), 'results/optimizer.pth')
+        
+        avg_loss = epoch_loss / len(train_loader)
+        return avg_loss
