@@ -18,8 +18,8 @@ def train(model, device, train_loader, optimizer, epoch, log_interval=10):
 
         # output progress after each batch
         if batch_idx % log_interval == 0:
-            print(f'[{batch_idx * len(data):>5} / {len(train_loader.dataset)}'
-                    f'({100. * batch_idx / len(train_loader):>3.0f}%)]\t'
+            print(f'[{batch_idx * len(data):>5}/{len(train_loader.dataset)}'
+                    f'({100. * batch_idx / len(train_loader):>2.0f}%)]\t'
                     f'Loss: {loss.item():.6f}')
 
             torch.save(model.state_dict(), 'results/model.pth')
