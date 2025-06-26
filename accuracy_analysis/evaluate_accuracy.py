@@ -1,4 +1,3 @@
-import os
 import json
 import numpy as np
 import torch
@@ -81,6 +80,5 @@ def run_evaluation(dataset_sizes, use_synthetic):
 
 # save results in json
 def save_accuracy(results, filename):
-    os.makedirs('results', exist_ok=True)
     with open(f'results/{filename}.json', 'w') as f:
-        json.dump(results, f, indent=4)
+        json.dump(results, f, indent = 4)
