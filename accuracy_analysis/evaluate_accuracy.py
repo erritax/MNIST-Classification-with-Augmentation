@@ -80,7 +80,7 @@ def run_evaluation(dataset_sizes, use_synthetic):
     return results
 
 # save results in json
-def save_results(results, filename):
+def save_accuracy(results, filename):
     os.makedirs('results', exist_ok=True)
     with open(f'results/{filename}.json', 'w') as f:
         json.dump(results, f, indent=4)
