@@ -10,10 +10,10 @@ def get_data(with_synthetic, train_dir, synthetic_dir, test_dir, batch_size_trai
     ])
 
     # original data
-    real_dataset = datasets.ImageFolder(train_dir, transform=transform)
+    real_dataset = datasets.ImageFolder(train_dir, transform = transform)
 
     # synthetic data
-    synthetic_dataset = datasets.ImageFolder(synthetic_dir, transform=transform)
+    synthetic_dataset = datasets.ImageFolder(synthetic_dir, transform = transform)
 
     # combined datasets if needed
     if with_synthetic:
@@ -28,8 +28,8 @@ def get_data(with_synthetic, train_dir, synthetic_dir, test_dir, batch_size_trai
     )
 
     test_loader = DataLoader(
-        datasets.ImageFolder(test_dir, transform=transform),
-        batch_size=batch_size_test, shuffle=False
+        datasets.ImageFolder(test_dir, transform = transform),
+        batch_size=batch_size_test, shuffle = False
     )
 
     return train_loader, test_loader
