@@ -28,5 +28,6 @@ def train(model, device, train_loader, optimizer, epoch, log_interval=10):
             torch.save(model.state_dict(), 'results/model.pth')
             torch.save(optimizer.state_dict(), 'results/optimizer.pth')
         
-        avg_loss = epoch_loss / len(train_loader)
-        return avg_loss
+    avg_loss = epoch_loss / len(train_loader)
+    
+    return avg_loss
