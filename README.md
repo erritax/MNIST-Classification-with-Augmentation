@@ -17,7 +17,7 @@ A simple convolutional neural network (CNN) was programmed using PyTorch. Set hy
 - momentum = 0.5
 
 ## Results
-
+The classification model can be trained on real MNIST images as well as with synthetically generated images if indicated. The model is tested with the testing dataset in MNIST.
 ![image](https://github.com/user-attachments/assets/9320b9e0-ae60-48d5-b8f4-9a95c0af16ed)
 
 ![image](https://github.com/user-attachments/assets/47bebe23-0955-49f6-8ab0-c3e0775a19e7)
