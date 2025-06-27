@@ -31,6 +31,7 @@ plt.ylabel('Average Loss')
 plt.ylim(0, 2.5)
 plt.grid(True)
 plt.tight_layout()
+plt.legend(title="Dataset Size", fontsize = 8)
 plt.figtext(0.05, 0.01, 
             "Solid lines = Real Data\nDashed lines = Real + Synthetic Data", 
             wrap=True, horizontalalignment = 'left', fontsize = 8)
