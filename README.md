@@ -15,3 +15,9 @@ A simple convolutional neural network (CNN) was programmed using PyTorch. Set hy
 - testing batch size = 1000
 - learning rate = 0.01
 - momentum = 0.5
+
+## Results
+
+![image](https://github.com/user-attachments/assets/9320b9e0-ae60-48d5-b8f4-9a95c0af16ed)
+
+![image](https://github.com/user-attachments/assets/47bebe23-0955-49f6-8ab0-c3e0775a19e7)
