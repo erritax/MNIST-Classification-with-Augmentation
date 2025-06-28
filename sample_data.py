@@ -19,7 +19,7 @@ real_loader = DataLoader(real_dataset, batch_size = 10, shuffle = True)
 real_images, real_labels = next(iter(real_loader))
 
 fig, ax = plt.subplots(1, 10, figsize = (16, 4))
-fig.suptitle('Real Data Samples', fontsize = 16)
+fig.suptitle('Real Data Samples', fontsize = 16, y = 0.85)
 for i in range(10):
     ax[i].imshow(real_images[i].squeeze(), cmap = 'gray')
     ax[i].set_title(f'{classes[real_labels[i]]}')
@@ -33,7 +33,7 @@ synthetic_loader = DataLoader(synthetic_dataset, batch_size = 10, shuffle = True
 synthetic_images, synthetic_labels = next(iter(synthetic_loader))
 
 fig, ax = plt.subplots(1, 10, figsize = (16, 4))
-fig.suptitle('Synthetic Data Samples', fontsize = 16)
+fig.suptitle('Synthetic Data Samples', fontsize = 16, y = 0.85)
 for i in range(10):
     ax[i].imshow(synthetic_images[i].squeeze(), cmap = 'gray')
     ax[i].set_title(f'{classes[synthetic_labels[i]]}')
