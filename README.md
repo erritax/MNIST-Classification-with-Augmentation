@@ -8,8 +8,8 @@ MNIST (Modified National Institute of Standards and Technology) is a large datas
 
 To learn more about the data augmentation process with LLMs, [visit this](https://github.com/erritax/MNIST-Data-Augmentation?tab=readme-ov-file).
 
-![image](https://github.com/user-attachments/assets/9dca66eb-7db3-445c-b64c-0a8a93c1af9c)
-![image](https://github.com/user-attachments/assets/6299acc6-9968-42db-9d1a-76ced6dc0f02)
+![image](https://github.com/user-attachments/assets/31d15e9e-c90c-491e-9480-4c36bb2bf3cc)
+![image](https://github.com/user-attachments/assets/d7eb6e1c-c7c5-4084-8e43-0822252d2ce0)
 
 
 ### The Model
