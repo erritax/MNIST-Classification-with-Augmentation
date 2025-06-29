@@ -1,10 +1,10 @@
 # Exploring Data Quality and Augmentation for MNIST Image Classification
 
-The performance of any machine learning model depends on the data it's trained on: its size, diversity, accuracy, and completeness. Despite significant advancements in artificial intelligence in all industries, access to high-quality data has increasingly become a challenge. For instance, financial and healthcare documents often contain highly sensitive and non-public information that private tech companies are then unable to access without breaching federal laws. This project explored the effect of dataset completeness on image classification. It also performed data augmentation using LLMs and investigated the effectiveness of a simple image classification model whilst synthetic data is or isn't added to the real training dataset.
+The performance of any machine learning model depends on the data it's trained on: its size, diversity, accuracy, and completeness. Despite significant advancements in artificial intelligence in all industries, access to high-quality data has increasingly become a challenge. For instance, financial and healthcare documents often contain highly sensitive and non-public information that private tech companies are then unable to access without breaching federal laws. This project explored the effect of dataset completeness on image classification. It also performed data augmentation using LLMs and investigated the effectiveness of a simple image classification model whilst synthetic data was or wasn't added to the real training dataset.
 
 ## Methods
 ### Dataset
-MNIST (Modified National Institute of Standards and Technology) is a large dataset of 70,000 handwritten digits (0-9) widely used for training image processing and classification models due to its robust size and variety. This dataset was chosen for this experiment to allow for the exploration of a wide range of dataset sizes to have a model be tested on. 
+MNIST (Modified National Institute of Standards and Technology) is a large dataset of 70,000 handwritten digits (0-9) widely used for training image processing and classification models due to its robust size and variety. This dataset was chosen for this experiment to allow for the exploration of a wide range of training dataset sizes. 
 
 To learn more about the data augmentation process with LLMs, [visit this](https://github.com/erritax/MNIST-Data-Augmentation?tab=readme-ov-file).
 
@@ -13,7 +13,7 @@ To learn more about the data augmentation process with LLMs, [visit this](https:
 
 
 ### The Model
-A simple convolutional neural network (CNN) was programmed using PyTorch. The model consisted of two layers, which were then flattened. Set hyperparameters included:
+A simple convolutional neural network (CNN) was programmed using PyTorch. The model consisted of two layers with ReLU activation and max pooling, followed by dropout to mitigate overfitting. There were two fully connected layers for classification. Set training and testing hyperparameters included:
 - number of epochs = 3
 - training batch size = 50
 - testing batch size = 1000
@@ -21,17 +21,17 @@ A simple convolutional neural network (CNN) was programmed using PyTorch. The mo
 - momentum = 0.5
 
 ## Results
-The classification model was trained on real MNIST images as well as with synthetically generated images if indicated. The model was tested with the testing dataset in MNIST.
+The classification model was trained on real MNIST images as well as the synthetically generated images, if indicated. The model was tested with the testing dataset in MNIST.
 
 The following figure depicts the results of various dataset sizes and accuracy scores when tested with and without synthetic data. Without fail, when synthetic data was added to the dataset, accuracy was improved.
 
 ![image](https://github.com/user-attachments/assets/9320b9e0-ae60-48d5-b8f4-9a95c0af16ed)
 
-An interesting metric when exploring the effects of the synthetic data is losses. Shown below, there's no clear indication that the addition of synthetic data decreased average losses, meaning that the testing results often deviate more from the ground truth.
+An interesting metric when exploring the effects of the synthetic data is average losses. Shown below, there's no clear indication that the addition of synthetic data decreased average losses, meaning that the testing results often deviate more from the ground truth.
 
 ![image](https://github.com/user-attachments/assets/47bebe23-0955-49f6-8ab0-c3e0775a19e7)
 
-A notable reason for this explanation could be the quality of the synthetic data generated. It was noted that the natural language prompt fed to the LLM for data augmentation was simple, and only ten example images were provided. One of the most prevalent issues was that because a singular grid of digits were provided rather than 10 separate images, despite indicating in the prompt, the image generated included multiple digits on one image. 
+A notable reason for this explanation could be the quality of the synthetic data generated and the addition of noisy data. It was noted that the natural language prompt fed to the LLM for data augmentation was simple, and only ten example images were provided. One of the most prevalent issues was that, because a singular grid of digits was provided rather than 10 separate images, despite indicating in the prompt, the image generated included multiple digits in one.
 
 ## Examples of Noisy Data
 
@@ -114,3 +114,4 @@ Ground Truth: 9
 ![9_098](https://github.com/user-attachments/assets/919a28e2-4099-4c6c-afc7-f4bd21f92565)
 ![9_031](https://github.com/user-attachments/assets/5112f361-f701-4eb6-855f-0e93c510d82e)
 ![9_086](https://github.com/user-attachments/assets/95dc717c-3464-4aaa-9bcd-4a8f36d732c9)
+![9_012](https://github.com/user-attachments/assets/858465da-6094-4efa-a55a-6ba11469099b)
